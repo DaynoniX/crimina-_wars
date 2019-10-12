@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../style/css/main.css">
+    <title>Home</title>
+</head>
+<body class="body auth-body">
+<header class="ingame-header">
+    <div class="char-info">
+        <div class="char-block">
+            <div class="char-portrait">
+                <a href=""><div class="char-avatar"></div></a>
+            </div>
+            <div class="char-status">
+                <div class="char-text">Name <span class="accent-text">'The Nickname'</span> Surname</div>
+                <div class="block-row">
+                    <div class="char-text">Level: #(Keyword)</div>
+                    <div class="char-text">Rank: 'Current Rank'</div>
+                </div>
+                <div class="char-condition">
+                    <span class="char-status_text">HP:<span class="accent-text">100/100</span></span>
+                    <div class="char-status_bar"></div>
+                    <p class="char-status_text">SP:<span class="accent-text">34/100</span></p>
+                    <p class="char-status_bar" style="background-size: 34%;"></p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="job-block">
+            <div class="char-text">Current job: <span class="char-text">Current Jobs Name</span></div>
+            <div class="clock">
+                <span class="char-text" id="days"></span>
+                <span class="char-text">:</span>
+                <span class="char-text" id="hours"></span>
+                <span class="char-text">:</span>
+                <span class="char-text" id="minutes"></span>
+                <span class="char-text">:</span>
+                <span class="char-text" id="seconds"></span>
+            </div>
+            <div class="char-text">Cash: $<span class="char-text">99.00</span> </div>
+
+        </div>
+
+    </div>
+    <div class="crimeTimer-block"></div>
+</header>
+<main class="ingame-main">
+    <aside class="ingame-sidebar">
+        <nav class="sidebar-menu">
+            <div id="sb-block-1" class="sidebar-block active">
+                <div id="sb-trigger-1" class="sidebar_heading">
+                    <span  class="menu-heading">Home</span>
+                </div>
+                <div class="dropbox">
+                    <ul class="sidebar_list">
+                        <li class="sidebar_link">
+                            <a href="../home/home/home.html" class="menu-link">Profile</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/coin_store.html" class="menu-link">Coin Store</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/online.html" class="menu-link">Who's on Streets</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/prison.html" class="menu-link">Prison</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/inventory/inventory.html" class="menu-link">Inventory</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/black_market.html" class="menu-link">Black Market</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/rewards.html" class="menu-link">Rewards</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="#" class="menu-link">LogOut</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sb-block-2" class="sidebar-block ">
+                <div id="sb-trigger-2" class="sidebar_heading">
+                    <span  class="menu-heading">Communication</span>
+                </div>
+                <div class="dropbox">
+                    <ul class="sidebar_list">
+                        <li class="sidebar_link">
+                            <a href="mailbox/inbox.html" class="menu-link">Mailbox</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="#" class="menu-link">Message Board</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="#" class="menu-link">Notifications</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sb-block-3" class="sidebar-block">
+                <div  id="sb-trigger-3" class="sidebar_heading">
+                    <span class="menu-heading">New York</span>
+                </div>
+
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">City Info</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Travel</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Houses</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Neighborhood</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Launder Money</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="sb-block-4" class="sidebar-block">
+                <div id="sb-trigger-4" class="sidebar_heading">
+                    <span class="menu-heading">Criminal Activity</span>
+                </div>
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Activities</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Pretty Crimes</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Auto Theft</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Work</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Organized Crimes</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Illegal Trafficking</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="sb-block-5" class="sidebar-block">
+                <div id="sb-trigger-5" class="sidebar_heading">
+                    <span class="menu-heading">Family</span>
+                </div>
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Family Turf</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Families</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="sb-block-6" class="sidebar-block">
+                <div id="sb-trigger-6" class="sidebar_heading">
+                    <span class="menu-heading">Other</span>
+                </div>
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Store</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Bodyguards</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Safe House</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Marriage</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Leaderboard</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Players Guide</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </aside>
+    <section class="page-layout">
+        <div class="page-heading">
+            <h2 class="page-heading_text">Refferals Program</h2>
+        </div>
+        <div class="page-container">
+            <div class="page-link-container">
+                <a href="home.html" class="page-link">Profile</a>
+                <a href="accoun_admin.html" class="page-link">Account Admin</a>
+                <a href="referrals_program.html" class="page-link">Referral Program</a>
+                <a href="customer_support.html" class="page-link">Customer Support</a>
+                <a href="../inventory/inventory.html" class="page-link">Inventory</a>
+                <a href="notepad.html" class="page-link">Notepad</a>
+                <a href="achivements.html" class="page-link">Achievements</a>
+                <a href="secret_stash.html" class="page-link">Secret Stash</a>
+                <a href="financial_report.html" class="page-link">Financial Report</a>
+                <a href="attack_report.html" class="page-link">Attack Report</a>
+            </div>
+        </div>
+        <div class="container big">
+            <div class="page-heading">
+                <h2 class="page-heading_text">Refferals Information</h2>
+            </div>
+            <div class="container average">
+                <p class="char-text ">The more people that play Criminal Wars the more fun it will be. And to make it even more attractive to tell your friends about the game you will receive $10,000.00 for each active person that signed up with your unique user id as referral. You will receive the reward once the person reaches level 10.</p>
+            </div>
+            <div class="container accent">Rewards</div>
+            <div class="container average">
+                <p class="default-text_list">$10,000.00 for each referral that reaches level 10.</p>
+                <p class="default-text_list">More fun when more people are playing.</p>
+            </div>
+            <div class="container accent">Rules</div>
+            <div class="container average">
+                <p class="default-text_list">Creating dupe accounts for the reward will not be tolerated and will get you suspended.</p>
+            </div>
+            <div class="container accent">
+                 Referral Link: <span class="char-text">www.criminal-wars.com/register.php?ref=326</span>
+            </div>
+            <div class="container c-mt">
+                <div class="page-heading">
+                    <h2 class="page-heading_text">Your Referrals</h2>
+                </div>
+                <div class="table col-3 table-head">
+                    <span class="char-text bold">Name</span>
+                    <span class="char-text bold">Rank</span>
+                    <span class="char-text bold">Last Active</span>
+                </div>
+                <div class="table col-3 table-row">
+                    <span class="char-text">Someone</span>
+                    <span class="char-text">Any</span>
+                    <span class="char-text">Never</span>
+                </div>
+                <div class="table col-3 table-row">
+                    <span class="char-text">Someone</span>
+                    <span class="char-text">Any</span>
+                    <span class="char-text">Never</span>
+                </div>
+                <div class="table col-3 table-row">
+                    <span class="char-text">Someone</span>
+                    <span class="char-text">Any</span>
+                    <span class="char-text">Never</span>
+                </div>
+            </div>
+            <div class="container accent">
+                Referral Count: <span class="accent-text">3</span>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="ingame-footer">
+
+</footer>
+<script src="../../style/js/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.4/moment-timezone-with-data.js"></script>
+<script src="../../style/js/timer.js"></script>
+<script src="../../style/js/slick.min.js"></script>
+<script src="../../style/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style/css/main.css">
+    <title>Home</title>
+</head>
+<body class="body auth-body">
+<header class="ingame-header">
+    <div class="char-info">
+        <div class="char-block">
+            <div class="char-portrait">
+                <a href=""><div class="char-avatar"></div></a>
+            </div>
+            <div class="char-status">
+                <div class="char-text">Name <span class="accent-text">'The Nickname'</span> Surname</div>
+                <div class="block-row">
+                    <div class="char-text">Level: #(Keyword)</div>
+                    <div class="char-text">Rank: 'Current Rank'</div>
+                </div>
+                <div class="char-condition">
+                    <span class="char-status_text">HP:<span class="accent-text">100/100</span></span>
+                    <div class="char-status_bar"></div>
+                    <p class="char-status_text">SP:<span class="accent-text">34/100</span></p>
+                    <p class="char-status_bar" style="background-size: 34%;"></p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="job-block">
+            <div class="char-text">Current job: <span class="char-text">Current Jobs Name</span></div>
+            <div class="clock">
+                <span class="char-text" id="days"></span>
+                <span class="char-text">:</span>
+                <span class="char-text" id="hours"></span>
+                <span class="char-text">:</span>
+                <span class="char-text" id="minutes"></span>
+                <span class="char-text">:</span>
+                <span class="char-text" id="seconds"></span>
+            </div>
+            <div class="char-text">Cash: $<span class="char-text">99.00</span> </div>
+
+        </div>
+
+    </div>
+    <div class="crimeTimer-block"></div>
+</header>
+<main class="ingame-main">
+    <aside class="ingame-sidebar">
+        <nav class="sidebar-menu">
+            <div id="sb-block-1" class="sidebar-block ">
+                <div id="sb-trigger-1" class="sidebar_heading">
+                    <span  class="menu-heading">Home</span>
+                </div>
+                <div class="dropbox">
+                    <ul class="sidebar_list">
+                        <li class="sidebar_link">
+                            <a href="../home/home/home.html" class="menu-link">Profile</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/coin_store.html" class="menu-link">Coin Store</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/online.html" class="menu-link">Who's on Streets</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/prison.html" class="menu-link">Prison</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/inventory/inventory.html" class="menu-link">Inventory</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/black_market.html" class="menu-link">Black Market</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="../home/rewards.html" class="menu-link">Rewards</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="#" class="menu-link">LogOut</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sb-block-2" class="sidebar-block ">
+                <div id="sb-trigger-2" class="sidebar_heading">
+                    <span  class="menu-heading">Communication</span>
+                </div>
+                <div class="dropbox">
+                    <ul class="sidebar_list">
+                        <li class="sidebar_link">
+                            <a href="mailbox/inbox.html" class="menu-link">Mailbox</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="#" class="menu-link">Message Board</a>
+                        </li>
+                        <li class="sidebar_link">
+                            <a href="#" class="menu-link">Notifications</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sb-block-3" class="sidebar-block ">
+                <div  id="sb-trigger-3" class="sidebar_heading">
+                    <span class="menu-heading">New York</span>
+                </div>
+
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">City Info</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Travel</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Houses</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Neighborhood</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Launder Money</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="sb-block-4" class="sidebar-block ">
+                <div id="sb-trigger-4" class="sidebar_heading">
+                    <span class="menu-heading">Criminal Activity</span>
+                </div>
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Activities</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Pretty Crimes</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Auto Theft</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Work</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Organized Crimes</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Illegal Trafficking</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="sb-block-5" class="sidebar-block ">
+                <div id="sb-trigger-5" class="sidebar_heading">
+                    <span class="menu-heading">Family</span>
+                </div>
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Family Turf</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Families</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="sb-block-6" class="sidebar-block active">
+                <div id="sb-trigger-6" class="sidebar_heading">
+                    <span class="menu-heading">Other</span>
+                </div>
+                <ul class="sidebar_list">
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Store</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Bodyguards</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Safe House</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Marriage</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Leaderboard</a>
+                    </li>
+                    <li class="sidebar_link">
+                        <a href="#" class="menu-link">Players Guide</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </aside>
+    <section class="page-layout">
+        <div class="page-heading">
+            <h2 class="page-heading_text">Players Guide</h2>
+        </div>
+        <div class="container big">
+            <div class="average-row char-text">
+                <div  class="accent-text">Introduction</div>
+
+                Welcome to La Cosa Nostra, the most realistic mafia game on the internet! We would like to thank you for reading this guide as a lot of time and effort was put into creating it to help you better understand how to get the full experience out of the game! Rounds reset every 45 days.
+                <br><a href="#" id="#intro" class="menu-link">[back to top]</a>
+
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Respect</div>
+
+                Respect is earned by completing family jobs. Respect is needed in order to complete certain jobs and tasks within the game. If you're disrespected by another mobster you'll lose 1 respect point.
+                <br><a href="#" id="#respect" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Businesses</div>
+
+                Businesses are purchased by families in their territory. You can collect from your business every hour but be careful because your business can be extorted and blown-up by other mobsters!
+                <a href="#" id="#business" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text"> Hookers & Drug Dealers</div>
+
+                There is a total of 10 drug dealers and hookers per location and can be hired by associates and up. Your hookers and drug dealers will generate you income every hour so as they have the required drugs or condoms. You will need to collect from them. Your hookers and drug dealers can be attacked by other mobsters so make sure you collect from them as often as possible!
+                <br><a href="#" id="#drug" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text"> Dealing Drugs & Alcohol</div>
+
+                Drugs & Alcohol prices vary between locations and prices change once per half hour. You are limited to how much you can hold by your level.
+                <br><a href="#" id="#alchohol" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text"> Fence & Chop Shops</div>
+
+                There is 1 fence and 1 chop shop per location. Only captains and up are allowed to purchase them. The owners are allowed to set a tax on how much money the receive per deal.
+
+                <br>Fence allows you to sell items that you have stolen from truck heists.
+
+                <br>Chop Shops allow you to sell vehicles that you have stolen from auto thefts.
+                <br><a href="#" id="#fence" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Referrals Program</div>
+
+                Each player has have a unique Referral ID with a link they can give to non-registered users and if they sign up and become a soldier you will receive a $10,000.00 reward.
+                <br><a href="#" id="#referral" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Free Energy</div>
+
+                Voting links allow you to vote for La Cosa Nostra once a day and be rewarded with energy.
+                <br><a href="#" id="#energy" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Scratch Offs</div>
+
+                Scratch offs are purchasable for $10,000 and you will be able to win cash prizes.
+                <br><a href="#" id="#offs" class="menu-link">[back to top]</a>            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Truck Heists</div>
+
+                Truck heists are available for associates and up. Truck heists allow you and your partner to rob a truck. The rewards will vary between cash or fence items. Your partner will have to be in the same location as the truck heist.
+                <br><a href="#" id="#truck" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Big Jobs</div>
+
+                Big Jobs allow you and three partners to set-up a job and try and make some cash off of it. The rewards will vary between the job you choose. The harder the job the more money you will make, but the higher chance you have it failure as well.
+                <br><a href="#" id="#bj" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Murder</div>
+
+                Whacking someone is a big process in the mafia. First you need to get permission from your higher-ups, and find out where your target is hiding and plan your attack carefully before clipping 'em. You will need a gun, a getaway vehicle with no damage and figure out a way to dispose of the body. Murdering someone can have it's consequences so be careful! Mobsters who're online can be attacked once every 2 minutes and if they're offline once every 15 minutes.
+                <br><a href="#" id="#murder" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Beating</div>
+
+                Beatin' someone is a good way to send a solid message to someone who's been runnin' their mouth about you. You'll need to be in the same location as your target and have a good beating weapon. Mobsters who're online can be attacked once every 2 minutes and if they're offline once every 15 minutes.
+                <br><a href="#" id="#beating" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text"> Shakedowns</div>
+
+                Got some info that a guy is carryin' around a lot of cash and you wanna take it from 'em? If you successfully shakedown a mobster you'll receive half of the money that they are currently holding on them. You'll need to be in the same location as them.
+                <br><a href="#" id="#shake" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Disrespect</div>
+
+                Found out another mobster has been sayin' stuff about you behind your back? Well, you can walk right up to their face and disrespect 'em. Disrespecting someone will make them lose 1 respect point. You'll need to be in the same location as them.
+                <br><a href="#" id="#dis" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Game Ranks</div>
+
+                1. Civilian <br>
+                2. Petty Thief<br>
+                3. Thug<br>
+                4. Gangster<br>
+                5. Goombah<br>
+                6. Enforcer<br>
+                7. Earner<br>
+                8. Wiseguy<br>
+                9. Made Man<br>
+                10. Capo<br>
+                11. Street Boss<br>
+                12. Consigliere<br>
+                13. Don<br>
+                14. Godfather<br>
+                <a href="#" id="#grank" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Creating A Family</div>
+
+                Creating a crime family is a major step in the criminal underworld. You'll need to figure out which location you wanna base your family out of and then see if there's any available turf spots available in that location. If so, it'll cost you $750,000.00 to start it up. You'll start off with 1 captain spot and will need to purchase more from the family turf page once your family gets bigger.
+                <br><a href="#" id="#fcre" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Family Ranks</div>
+
+                Crime Family Ranking Structure <br>
+                Boss <br>
+                Underboss <br>
+                Consigliere <br>
+                Captain <br>
+                Soldier <br>
+                Associate <br>
+                <a href="#" id="#frank" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Safe house</div>
+
+                The safehouse is used to hide from other mobsters in times of war. You will not be allowed to participate in any criminal activities while in the safe house or be attacked. If you blow-up a mobsters house while they are in the safe house it will remove them from the safe house, allowing them to be attacked. It is located in the Store then it's located next to scratch offs. You can be in it for as long as you can afford it.
+                <br><a href="#" id="#safe" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                 <div class="accent-text">Skills</div>
+
+                Skills help you become a well rounded mobster, and is located in Petty Crimes There are: Intimidation,Strength,Accuracy,Driving,Intelligence, arson, business, pimping, dealing and busting. All skills can be gained through the various petty crime jobs.
+                <br><a href="#" id="#skill" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row char-text">
+                <div class="accent-text">Marriage</div>
+
+                Marriage allows you to propose to a fellow mobster which does not give any special benefits. You will need 1 wedding ring.
+                <br><a href="#" id="#marry" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row">
+                <div class="accent-text">Character Classes</div>
+
+                <p class="char-text">You start off picking the type of Character Class you want to be.</p>
+                <p class="char-text">Trigger man: Starts off with level 3 accuracy and is better at killing people.</p>
+                <p class="char-text">Arsonists: Starts off with level 3 arson and has a higher chance of blowing businesses & properties up.</p>
+                <p class="char-text">Enforcer: Starts off with level 3 strength and has a higher chance of beating someone up.</p>
+                <p class="char-text">Pimp: Starts off with a level 2 pimping and hookers generate more money every hour.</p>
+                <p class="char-text">Business man: Starts off with level 2 business and businesses generate more money every hour.</p>
+                <p class="char-text">Drug Mule: Starts off with level 2 dealing and has a less chance of being caught when dealing drugs & alcohol.</p>
+                <p class="char-text">Skipper: Group Jobs have a higher chance of success.</p>
+                <p class="char-text">Earner: Makes more money from petty crimes.</p>
+                <p class="char-text">Cooker: Can grow weed, and produce various drugs.</p>
+                <p class="char-text">Bomb Maker: Creates bombs using certain materials.</p>
+                <a href="#" id="#class" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row">
+                <div class="accent-text">Bodyguards</div>
+
+                <p class="char-text">Bodyguards protect you from anyone who's lookin' to make a name for themselves and take you out. They're costly but well worth the money. You can own a maximum number of 200 bodyguards.</p>
+                <br><a href="#" id="#bodyg" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row">
+                <div class="accent-text">Prison</div>
+
+                <p class="char-text">You will go to prison early and often. Bubba will be there to meet you. Bubba lurks in the prison. Other players not in jail, can send him to attack mobsters in jail.</p>
+                <br><a href="#" id="#prison" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row">
+                <div class="accent-text">Game Rules</div>
+                <p class="char-text">1. No Racism of any kind in the game.</p>
+                <p class="char-text">2. No Cheating and Exploiting of any glitches if you encounter any glitch or bug in the game you must report to the admin or you will be suspended.</p>
+                <p class="char-text">3. No real life personnel attacks on any player.</p>
+                <p class="char-text">4. You are allowed one account if you make multiple accounts you can face possible suspension.</p>
+                <br><a href="#" id="#rules" class="menu-link">[back to top]</a>
+            </div>
+            <div class="average-row">
+                <div class="accent-text">Clothing</div>
+                <p class="char-text"> Clothing gives you certain additions to your skills when you have clothing equipped. You can purchase clothing by going to the city information page and clicking on clothing store. There are certain legendary clothing items in the game that can't be purchased, they're only obtainable through big jobs but have a very high failure rate due to their bonuses they reward you. </p>
+
+                <br><a href="#" id="#clothing" class="menu-link">[back to top]</a>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="ingame-footer">
+
+</footer>
+<script src="../style/js/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.4/moment-timezone-with-data.js"></script>
+<script src="../style/js/timer.js"></script>
+<script src="../style/js/slick.min.js"></script>
+<script src="../style/js/main.js"></script>
+<script src="../style/js/ckeditor.js"></script>
+<script type="text/javascript">
+    CKEDITOR.replace( 'editor1');
+</script>
+</body>
+</html>
+
+
+
+
+<p class="char-text"></p>

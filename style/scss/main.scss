@@ -1,0 +1,1052 @@
+//----------- Slider ----------//
+@import url('slick.css');
+//----------- Fonts -----------//
+@font-face {
+  font-family: 'PTSerif-Regular', serif;
+  src: url("../fonts/PTSerif-Regular.ttf");
+}
+@font-face {
+  font-family: 'PTSerif-Bold', serif;
+  src: url("../fonts/PTSerif-Bold.ttf");
+}
+//-----------Variables ---------//
+$black-07: rgba(0,0,0,0.7);
+$red-passive:rgba(255, 0, 0, 0.1);
+$red-active: rgba( 255, 0, 0, 0.7);
+$red-semi: rgba(255, 0, 0, 0.3);
+$red-200:rgba(200, 0, 0, 0.7);
+//------- Global Properties ----------//
+html * {
+  margin: 0;
+  padding: 0;
+}
+.default{
+  &-input{
+    &.textarea{
+      resize: none;
+      min-height: 150px;
+      width: 100%;
+      &:active{
+        background: $black-07;
+      }
+      &:focus{
+        background: $black-07;
+      }
+    }
+    &.select{
+      &:active{
+        background: $black-07;
+      }
+      &:focus{
+        background: $black-07;
+      }
+    }
+    background: $black-07;
+    border: none;
+    outline: none;
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #cccccc;
+    box-shadow: 0 0 5px 3px $red-passive;
+    &:hover{
+      box-shadow: 0 0 5px 3px $red-active;
+    }
+    &:active{
+      background: $red-semi;
+      box-shadow: 0 0 5px 3px $red-semi;
+    }
+    &:focus{
+      background: $red-semi;
+      box-shadow: 0 0 5px 3px $red-semi;
+    }
+
+  }
+  &-button{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: $red-semi;
+    box-shadow: 0 0 7px 5px $red-semi;
+    cursor: pointer;
+    color: #cccccc;
+    &:hover{
+      box-shadow: 0 0 5px 3px $red-active;
+      background: $red-active;
+    }
+    &:active{
+      background: $red-passive;
+      box-shadow: 0 0 5px 3px $red-passive;
+    }
+
+  }
+  &-label{
+    color: #cccccc;
+    text-decoration: none;
+    font-family: 'PTSerif-Bold', serif;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  &-mark{
+    color: #cccccc;
+    text-decoration: none;
+    font-family: 'PTSerif-Bold', serif;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &-textarea{
+    width: 100%;
+    resize: none;
+    background: $black-07;
+    border: none;
+    outline: none;
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #cccccc;
+    box-shadow: 0 0 5px 3px $red-passive;
+    &:hover{
+      box-shadow: 0 0 5px 3px $red-active;
+    }
+  }
+  &-text{
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #cccccc;
+    &_list{
+      font-family: 'PTSerif-Regular', serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #cccccc;
+      &:before{
+        content: '\2022';
+        font-size: 20px;
+        color: #cccccc;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+.body{
+  box-shadow: inset 0 0 50px 20px #000;
+  min-height: 100vh;
+  &.auth-body{
+    background: url("../img/bg-1.jpg") no-repeat top/cover;
+    background-attachment: fixed;
+  }
+  &.ingame-body{
+    background: url("../img/bg-2.jpg") no-repeat top/cover;
+    background-attachment: fixed;
+  }
+}
+
+//------ Custom Checkbox -------//
+.checkbox input {
+  position: absolute;
+  z-index: -10;
+  opacity: 0; }
+.checkbox-text {
+  position: relative;
+  cursor: pointer;
+}
+.checkbox-text:before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.35),  0 0 5px 3px $red-passive;
+  border-radius: 10px;
+  left: -40px;
+  top: 0; }
+.checkbox input:checked + .checkbox-text:before {
+  content: '\2713';
+  background: $red-passive;
+  color: $red-active;
+  text-align: center;
+  line-height: 30px;
+  font-size: 45px; }
+
+.radio input {
+  position: absolute;
+  z-index: -10;
+  opacity: 0; }
+.radio-text {
+  position: relative;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.radio-text:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.35),  0 0 5px 3px $red-passive;
+  border-radius: 50%;
+  margin-top: 17px;
+  left: -25px;
+  top: 0; }
+.radio input:checked + .radio-text:before {
+  content: '\25CF';
+  background: $red-passive;
+  color: $red-active;
+  text-align: center;
+  line-height: 18px;
+  font-size: 18px; }
+
+//------- Custom File-type------//
+.download-avatar{
+  width: 100%;
+  height: 150px;
+  background: url("../img/avatar.png") no-repeat top/cover;
+  cursor: pointer;
+  box-shadow: inset 0 0 15px 10px rgba(0,0,0,0.8);
+  &:hover{
+    box-shadow: inset 0 0 15px 10px rgba(255,0,0,0.1),inset 0 0 15px 10px rgba(0,0,0,0.8);
+  }
+}
+.avatar{
+  width: 100%;
+  position: relative;
+  z-index: -10;
+  opacity: 0;
+}
+.img-label{
+  & .default-mark{
+    margin-top: 10px;
+  }
+}
+
+//------ Modificators ----------//
+.accent-text{
+  color: $red-200;
+  font-family: 'PTSerif-Bold', serif;
+  font-size: 18px;
+  line-height: 30px;
+  &.done{
+    color: gold;
+  }
+
+}
+.textarea{
+  &:active{
+    background: $black-07;
+  }
+  &:focus{
+    background: $black-07;
+  }
+}
+.row{
+  padding: 0 10px;
+}
+.headrow{
+  border-bottom: 1px solid rgba(204, 204,204, 0.3);
+  background: linear-gradient(to top,rgba(204, 0,0, 0.3) 20%, transparent ) ;
+  padding: 0 10px;
+  border-radius: 10px 10px 5px 5px;
+}
+.family-heading{
+  color: #cccccc;
+  font-family: 'PTSerif-Regular', serif;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.4), transparent 40%);
+  padding-bottom: 10px;
+  border-radius: 15px;
+  border-bottom: 1px solid #cccccc;
+}
+.arrow{
+  width: 100%;
+  height: 40px;
+  mask-image: url('../img/arrow.svg');
+  -webkit-mask-image: url('../img/arrow.svg');
+  background: $red-200;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  cursor: pointer;
+  &:hover{
+    background: rgba(255,0,0,0.4);
+  }
+  &-left{
+    transform: rotate(180deg);
+  }
+}
+
+//------ Auth Page Modificators -----//
+.recover{
+  & .default-input{
+    grid-column: span 4;
+    width: 80%;
+  }
+  & .button-row{
+    grid-column: span 4;
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
+.contact{
+  & .default-input{
+    grid-column: span 4;
+    justify-content: center;
+    width: 80%;
+  }
+  & .default-textarea{
+    grid-column: span 4;
+    width: 80%;
+    height: 150px;
+    resize: none;
+  }
+  & .button-row{
+    grid-column: span 4;
+    justify-content: center;
+  }
+}
+.authorization{
+  & input{
+    grid-column: span 4;
+    justify-content: center;
+    width: 80%;
+  }
+  & .button-row{
+    grid-column: span 4;
+
+  }
+  & .auth-fpassword{
+    grid-column: span 4;
+    margin-top: 20px;
+  }
+}
+.registration{
+  & .img-label{
+    grid-column: span 1;
+    width: 100%;
+    align-self: start;
+  }
+  & .input-group{
+    grid-column: span 3;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    & .default-input{
+      width: 100%;
+    }
+  }
+  & .button-row{
+    grid-column: span 4;
+    justify-content: flex-end;
+  }
+  & .default-label{
+    grid-column: span 4;
+    display: flex;
+    align-items: center;
+  }
+}
+.history{
+  min-width: 900px;
+  display: grid;
+  grid-gap: 75px;
+  grid-template-columns: 1fr;
+}
+.round-history{
+  min-width: 900px;
+  display: grid;
+  grid-gap: 100px;
+}
+.char{
+  & .button-row{
+    justify-content: center;
+    margin-top: 20px;
+  }
+  &-create{
+    & .button-row{
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+  &-info{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-columns: 50px;
+    & .auth-fame_item{
+      display: block;
+      width: 100%;
+    }
+    &_container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+  }
+}
+
+//-------- Forms ---------//
+.button{
+  &-row{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+.text-editor{
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+//-------- Authorization Pages --------//
+.auth{
+  &-header{
+    background: linear-gradient(to top,transparent, rgba(0,0,0,0.8) 70%);
+    padding-bottom: 30px;
+    margin-bottom: 120px;
+  }
+  &-tab{
+    display: inline-block;
+    margin: 15px 25px;
+    padding: 4px;
+  }
+  &-link{
+    color: #cccccc;
+    text-decoration: none;
+    font-family: 'PTSerif-Bold', serif;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 0px 15px;
+    border-radius: 15px;
+    &:hover{
+      box-shadow: 0 0 5px 10px rgba(255, 0, 0, 0.2), inset 0 0 0 30px rgba(255, 0, 0, 0.2);
+    }
+  }
+  &-section{
+    border-radius: 5px;
+    width: 500px;
+    margin: 0 auto;
+    background: rgba(0,0,0, 0.8);
+    padding: 20px;
+    box-shadow:  0 0 10px 10px rgba(0,0,0, 0.8);
+  }
+  &-text{
+    font-family: 'PTSerif-Regular', serif;
+    color: #cccccc;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    &_container{
+      width: 80%;
+      margin: 30px auto;
+    }
+
+
+  }
+  &-heading{
+    text-align: center;
+    font-family: 'PTSerif-Bold', serif;
+    font-size: 28px;
+    line-height: 32px;
+    color: #cccccc;
+   &_block{
+     background: rgba(255, 0, 0, 0.2);
+     padding: 10px;
+     border-radius: 10px;
+     box-shadow: 0 0 7px 5px rgba(255, 0, 0, 0.2);
+     display: inline-block;
+   }
+  }
+  &-form{
+    width: 80%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    grid-gap: 20px;
+    justify-items: center;
+  }
+  &-footer{
+    margin-top: 270px;
+    padding-top: 30px;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 30%,transparent);
+    &-row{
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    &_link{
+      color: #cccccc;
+      text-decoration: none;
+      font-family: 'PTSerif-Regular', serif;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+  }
+  &-fpassword{
+    display: block;
+    color: #cccccc;
+    text-decoration: none;
+    font-family: 'PTSerif-Bold', serif;
+    font-size: 18px;
+    line-height: 24px;
+    &:hover{
+      color: rgba(255, 0, 0, 0.7);
+    }
+  }
+  &-fame{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 4fr;
+    grid-gap: 10px;
+    &_container{
+      display: grid;
+      grid-gap: 30px;
+    }
+    &_item{
+      color: #cccccc;
+      text-decoration: none;
+      font-family: 'PTSerif-Bold', serif;
+      font-size: 14px;
+      line-height: 21px;
+      justify-content: center;
+      padding: 10px 0;
+      &.heading{
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+  &-rounds{
+    &_container{
+      display: grid;
+      grid-gap: 30px;
+      justify-content: center;
+    }
+    &_row{
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    &_rows{
+      display: grid;
+      padding-bottom: 50px;
+      justify-content: center;
+    }
+    &_link{
+      font-family: 'PTSerif-Regular', serif;
+      color: #cccccc;
+      font-size: 18px;
+      line-height: 26px;
+      text-decoration: none;
+      &:hover{
+        color: rgba(255, 0, 0, 0.7);
+      }
+    }
+  }
+}
+.round{
+  &-row{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 50px repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  &-updates{
+    &_container{
+      margin-top:  50px;
+    }
+  }
+}
+.slider{
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  align-items: center;
+  margin: 50px 0;
+
+  &-heading{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  &-tracker{
+    overflow: hidden;
+    height: 400px;
+    width: 700px;
+    margin: 0 auto;
+  }
+  &-text{
+    color: #cccccc;
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+  }
+}
+.video{
+  &_item{
+    width: 100%;
+  }
+  &-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 20px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+  }
+}
+
+//-------- Ingame Pages ---------//
+.ingame{
+  &-header{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, $black-07, rgba(0,0,0,0.5) 80% );
+  }
+  &-sidebar{
+    width: 200px;
+  }
+  &-footer{
+    margin-top: 150px;
+    width: 100%;
+    height: 30px;
+    background: #cccccc;
+  }
+  &-main{
+    display: flex;
+    flex-direction: row;
+  }
+}
+.sidebar{
+  &-block{
+    background: $black-07;
+    &.active{
+      .sidebar_list{
+        max-height: 350px;
+        transition: max-height 0.5s;
+      }
+       .sidebar_heading{
+        border-radius: 0 0 10px 10px;
+        transition:  0.5s;
+
+      }
+    }
+  }
+  &_list{
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+  &_link{
+    padding: 10px;
+  }
+  &_heading{
+    padding: 15px 15px;
+    cursor: pointer;
+    background: linear-gradient(to top, $red-200 20%, $red-active);
+    border-bottom: 1px solid #cccccc;
+    transition: 0.5s;
+  }
+}
+.menu{
+  &-heading{
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #cccccc;
+  }
+  &-link{
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #cccccc;
+    text-decoration: none;
+    &:hover{
+      color: $red-active;
+    }
+  }
+}
+.char{
+  &-info{
+    display: flex;
+    justify-content: space-between;
+  }
+  &-status{
+    &_bar{
+      width: 150px;
+      height: 7px;
+      background: linear-gradient(to right, $red-passive, $red-active);
+      background-repeat: no-repeat;
+      border: 2px solid #cccccc;
+    }
+    &_text{
+      font-family: 'PTSerif-Regular', serif;
+      font-size: 12px;
+      line-height: 18px;
+      color: #cccccc;
+      & .accent-text{
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 15px;
+      }
+
+    }
+  }
+  &-block{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns:auto auto;
+    justify-items: center;
+    padding: 10px;
+  }
+  &-portrait{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: url('../img/skull.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+  }
+  &-text{
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #cccccc;
+    &.small{
+      font-size: 10px;
+      line-height: 14px;
+    }
+    &.bold{
+
+      font-family: 'PTSerif-Bold', serif;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: bold;
+    }
+  }
+  &-cash{
+  }
+  &-condition{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    align-items: center;
+  }
+}
+.block{
+  &-heading{
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: $red-active;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-decoration: none;
+
+
+  }
+}
+.job{
+  &-block{
+    padding: 30px 20px;
+    background: $red-passive;
+    justify-content: end;
+    justify-items: end;
+    align-items: center;
+    display: grid;
+  }
+}
+.center-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/-1;
+}
+.between-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1/-1;
+}
+.page{
+  &-heading{
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    background: linear-gradient(to top, $red-200 20%, $red-active);
+    border-bottom: 1px solid #cccccc;
+    grid-column: 1/-1;
+    &_text{
+      font-family: 'PTSerif-Regular', serif;
+      font-size: 28px;
+      line-height: 38px;
+      color: #cccccc;
+    }
+
+  }
+  &-link{
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #cccccc;
+    text-decoration: none;
+    &:hover{
+      color: $red-active;
+    }
+
+    &-container{
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(50,40,40,0.3);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 15px;
+    }
+  }
+  &-layout{
+    width: 900px;
+    margin: 30px auto;
+    background: $black-07;
+    min-height: 1000px;
+    padding-bottom: 50px;
+  }
+  &-container{
+    padding: 20px;
+    &_heading{
+      font-family: 'PTSerif-Regular', serif;
+      font-size: 24px;
+      line-height: 38px;
+      color: #cccccc;
+    }
+  }
+}
+.profile-img{
+  background: url("../img/skull.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+}
+.city-img{
+  width: 100%;
+  height: 100%;
+  background: url("../img/city.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+//------- Ingame Pages Mods--------//
+.container{
+  &.c-bg{
+    padding: 20px;
+    background: rgba(50,40,40,0.3);
+    display: grid;
+    grid-gap: 10px;
+  }
+  &.c-pic{
+    width: 100%;
+    height: 300px;
+  }
+  &.template{
+    display: grid;
+    grid-gap: 30px;
+    grid-auto-rows: 375px;
+    grid-template-columns: repeat(3, 1fr);
+    & .city-img{
+      height: 80%;
+    }
+  }
+  &.small{
+    max-width: 600px;
+    margin: 0 auto;
+    justify-items: center;
+  }
+  &.form{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    margin-top: 30px;
+  }
+  &.c-mt{
+    margin-top: 50px;
+    &-2{
+      margin-top: 100px;
+    }
+  }
+  &.accent{
+    background: $red-passive;
+    padding: 10px;
+    font-family: 'PTSerif-Regular', serif;
+    font-size: 20px;
+    line-height: 24px;
+    color: #cccccc;
+    text-align: center;
+  }
+  &.big{
+    padding: 20px;
+  }
+  &.average{
+    padding: 20px;
+    background: rgba(50,40,40,0.3);
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+    grid-auto-flow: dense;
+    text-align: center;
+    align-items: center;
+
+  }
+  &.acc-admin{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 50px 0;
+    padding: 20px;
+
+  }
+  &.bio{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    margin: 50px 0;
+    &-text{
+      padding: 20px;
+      background: rgba(50,40,40,0.3);
+    }
+  }
+  &.profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 50px 0;
+    padding: 20px;
+  }
+  &.stats{
+    background: rgba(50,40,40,0.3);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px;
+  }
+
+}
+.b-heading{
+  padding: 15px;
+  font-family: 'PTSerif-Regular', serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #cccccc;
+}
+.prop-list{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.table{
+  display: grid;
+  grid-gap: 10px;
+  & .default-input{
+    padding: 0;
+    width: 100%;
+
+  }
+  &-head{
+    padding: 0 10px;
+    background: rgba(0,0,0,0.3);
+  }
+  &-row{
+    padding: 0 10px;
+    background: rgba(0,0,0,0.1);
+    align-items: center;
+  }
+  & *{
+    border-right: 1px solid rgba(100,100,100,0.4);
+    padding: 20px 0;
+    &:nth-last-child(1){
+      border-right: none;
+    }
+  }
+  &-reward{
+    display: grid;
+    grid-gap: 20px;
+    & .table_item{
+      padding: 10px;
+      &.bordered{
+        border-right: 1px solid rgba(100,100,100,0.4);
+      }
+    }
+    &.table-row{
+      padding: 10px 0;
+      background: rgba(0,0,0,0.1);
+    }
+  }
+  & .default-button{
+    padding: 0;
+  }
+}
+
+.col{
+  &-2{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &-3{
+    grid-template-columns: repeat(3,1fr);
+    &-counter{
+      grid-template-columns: 30px 1fr 1fr;
+    }
+  }
+  &-4{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &-5{
+    grid-template-columns: repeat(5, 1fr);
+  }
+  &-6{
+    grid-template-columns: repeat(6, 1fr);
+  }
+  &-7{
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.average{
+  &-row{
+    padding: 10px 20px;
+    background: $black-07;
+    border-bottom: 1px solid #cccccc;
+  }
+}
+.topic{
+  &-row{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 30px;
+  }
+  &-message{
+    border: 1px solid #cccccc;
+    margin: 0 0 150px 0;
+
+  }
+}
+//--------- Temporary
