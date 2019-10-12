@@ -11,10 +11,10 @@
 }
 //-----------Variables ---------//
 $black-07: rgba(0,0,0,0.7);
-$red-passive:rgba(255, 0, 0, 0.1);
-$red-active: rgba( 255, 0, 0, 0.7);
-$red-semi: rgba(255, 0, 0, 0.3);
-$red-200:rgba(200, 0, 0, 0.7);
+$red-passive:rgba(180, 0, 0, 0.1);
+$red-active: rgba( 180, 0, 0, 0.6);
+$red-semi: rgba(180, 0, 0, 0.2);
+$red-200:rgba(150, 0, 0, 0.6);
 //------- Global Properties ----------//
 html * {
   margin: 0;
@@ -70,8 +70,8 @@ html * {
     outline: none;
     font-family: 'PTSerif-Regular', serif;
     font-size: 18px;
-    line-height: 24px;
-    padding: 10px 20px;
+    line-height: 20px;
+    padding: 10px 15px;
     border-radius: 5px;
     background: $red-semi;
     box-shadow: 0 0 7px 5px $red-semi;
@@ -168,7 +168,8 @@ html * {
   box-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.35),  0 0 5px 3px $red-passive;
   border-radius: 10px;
   left: -40px;
-  top: 0; }
+  top: 0;
+}
 .checkbox input:checked + .checkbox-text:before {
   content: '\2713';
   background: $red-passive;
@@ -653,7 +654,7 @@ html * {
     padding: 10px;
   }
   &_heading{
-    padding: 15px 15px;
+    padding: 10px 15px;
     cursor: pointer;
     background: linear-gradient(to top, $red-200 20%, $red-active);
     border-bottom: 1px solid #cccccc;
