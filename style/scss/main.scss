@@ -11,10 +11,10 @@
 }
 //-----------Variables ---------//
 $black-07: rgba(0,0,0,0.7);
-$red-passive:rgba(180, 0, 0, 0.1);
-$red-active: rgba( 180, 0, 0, 0.6);
-$red-semi: rgba(180, 0, 0, 0.2);
-$red-200:rgba(150, 0, 0, 0.6);
+$red-passive:rgba(200, 0, 0, 0.1);
+$red-active: rgba( 200, 0, 0, 0.7);
+$red-semi: rgba(200, 0, 0, 0.3);
+$red-200:rgba(150, 0, 0, 0.7);
 //------- Global Properties ----------//
 html * {
   margin: 0;
@@ -70,8 +70,8 @@ html * {
     outline: none;
     font-family: 'PTSerif-Regular', serif;
     font-size: 18px;
-    line-height: 20px;
-    padding: 10px 15px;
+    line-height: 24px;
+    padding: 10px 20px;
     border-radius: 5px;
     background: $red-semi;
     box-shadow: 0 0 7px 5px $red-semi;
@@ -168,8 +168,7 @@ html * {
   box-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.35),  0 0 5px 3px $red-passive;
   border-radius: 10px;
   left: -40px;
-  top: 0;
-}
+  top: 0; }
 .checkbox input:checked + .checkbox-text:before {
   content: '\2713';
   background: $red-passive;
@@ -193,7 +192,7 @@ html * {
   width: 20px;
   height: 20px;
   background: rgba(0, 0, 0, 0.3);
-  box-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.35),  0 0 5px 3px $red-passive;
+  box-shadow: inset 8px 8px 20px rgba(0, 0, 0, 0.35),  0 0 5px 3px $red-semi;
   border-radius: 50%;
   margin-top: 17px;
   left: -25px;
@@ -458,13 +457,13 @@ html * {
     font-size: 28px;
     line-height: 32px;
     color: #cccccc;
-   &_block{
-     background: rgba(255, 0, 0, 0.2);
-     padding: 10px;
-     border-radius: 10px;
-     box-shadow: 0 0 7px 5px rgba(255, 0, 0, 0.2);
-     display: inline-block;
-   }
+    &_block{
+      background: rgba(255, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 7px 5px rgba(255, 0, 0, 0.2);
+      display: inline-block;
+    }
   }
   &-form{
     width: 80%;
@@ -637,7 +636,7 @@ html * {
         max-height: 350px;
         transition: max-height 0.5s;
       }
-       .sidebar_heading{
+      .sidebar_heading{
         border-radius: 0 0 10px 10px;
         transition:  0.5s;
 
@@ -654,7 +653,7 @@ html * {
     padding: 10px;
   }
   &_heading{
-    padding: 10px 15px;
+    padding: 15px 15px;
     cursor: pointer;
     background: linear-gradient(to top, $red-200 20%, $red-active);
     border-bottom: 1px solid #cccccc;
@@ -779,6 +778,18 @@ html * {
     display: grid;
   }
 }
+.branch-img{
+  width: 100%;
+  height: 30px;
+  margin: 10px;
+  &.two{
+    background: url("../img/two-branches.png")no-repeat center/contain;
+
+  }
+  &.four{
+    background: url("../img/four-branches.png")no-repeat center/contain;
+  }
+}
 .center-row{
   display: flex;
   justify-content: center;
@@ -788,6 +799,18 @@ html * {
 .between-row{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  grid-column: 1/-1;
+}
+.evenly-row{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-column: 1/-1;
+}
+.around-row{
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   grid-column: 1/-1;
 }
@@ -849,6 +872,10 @@ html * {
   background-repeat: no-repeat;
   width: 100%;
   height: 250px;
+  &.family{
+    height: 120px;
+    width: 120px;
+  }
 }
 .city-img{
   width: 100%;
@@ -860,6 +887,22 @@ html * {
 }
 //------- Ingame Pages Mods--------//
 .container{
+  &.tree{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px 95px;
+    padding-right: 20px;
+    padding-left: 20px;
+    &.big{
+      padding: 0 60px;
+    }
+    & .around-row{
+      grid-column: span 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+  }
   &.c-bg{
     padding: 20px;
     background: rgba(50,40,40,0.3);
@@ -894,6 +937,9 @@ html * {
     margin-top: 50px;
     &-2{
       margin-top: 100px;
+    }
+    &-row{
+      margin: 15px 0;
     }
   }
   &.accent{
